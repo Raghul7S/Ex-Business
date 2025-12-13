@@ -1,0 +1,88 @@
+.hero {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("../../../public/assets/images/rice-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Overlay */
+.overlay {
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+}
+
+/* LEFT-ALIGNED CONTENT */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--text-white);
+  margin-top: 5rem;
+  max-width: 1000px;
+}
+
+/* Text styles */
+.smallText {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-glow);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 60px;
+  color: var(--text-white);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 20px;
+  line-height: 1.7;
+  color: var(--text-white);
+}
+
+.ctaBtn {
+  background-color: var(--button-bg);
+  color: var(--text-white);
+  border: none;
+  padding: 12px 26px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.ctaBtn:hover {
+  background-color: var(--hover-bg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content {
+    padding-left: 1.25rem;
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .smallText {
+    font-size: 14px;
+  }
+
+  .ctaBtn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

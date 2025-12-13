@@ -1,0 +1,52 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 14px 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  align-items: center;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-black);
+}
+
+.brand:hover {
+  color: var(--button-bg);
+}
+
+.link {
+  color: var(--text-black);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.link:hover {
+  color: var(--button-bg);
+}
+
+.contactBtn {
+  background-color: var(--button-bg);
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 30px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 3px 0px;
+}
+
+.contactBtn:hover {
+  color: #ffffff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 5px 25px 0px;
+}
+
+@media (max-width: 991px) {
+  .contactBtn {
+    margin-top: 12px;
+  }
+}
