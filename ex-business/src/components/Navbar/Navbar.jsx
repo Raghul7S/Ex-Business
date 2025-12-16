@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
+
+import logo from "../../../public/assets/images/vinland_logo.png";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
@@ -7,21 +10,18 @@ export default function Navbar() {
   return (
     <nav className={`navbar navbar-expand-lg ${styles.navbar}`}>
       <div className="container">
-        {/* Brand */}
-        <a className={`navbar-brand ${styles.brand}`} href="/">
-          ExportCo
+        <a className={styles.brand} href="/">
+          <img src={logo} alt="ExportCo Logo" className={styles.logo} />
         </a>
 
-        {/* Toggle */}
         <button
-          className="navbar-toggler"
-          type="button"
+          className={styles.toggler}
           onClick={() => setOpen(!open)}
+          aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          {open ? <FiX size={26} /> : <FiMenu size={26} />}
         </button>
 
-        {/* Menu */}
         <div className={`collapse navbar-collapse ${open ? "show" : ""}`}>
           <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-3">
             <li className="nav-item">
@@ -48,10 +48,8 @@ export default function Navbar() {
               </a>
             </li>
 
-            <li className="nav-item">
-              <a href="#contact" className={styles.contactBtn}>
-                Contact Us
-              </a>
+            <li className={`nav-item ${styles.contactBtn}`}>
+              <a href="#contact">Contact Us</a>
             </li>
           </ul>
         </div>

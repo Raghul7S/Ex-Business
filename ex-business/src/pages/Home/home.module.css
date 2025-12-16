@@ -10,7 +10,7 @@
 /* Overlay */
 .overlay {
   min-height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
 }
@@ -62,6 +62,35 @@
   background-color: var(--hover-bg);
 }
 
+.about {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  text-align: center;
+  color: var(--text-green);
+  letter-spacing: 1.5px;
+  align-items: center;
+  padding: 3rem 10rem;
+}
+
+.rice_heading {
+  font-size: 48px;
+  color: var(--text-black);
+  line-height: 1.2;
+  padding-bottom: 10px;
+}
+
+.rice_highlight {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-green);
+}
+
+.rice_description {
+  font-size: 14px;
+  color: var(--text-grey);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .content {
@@ -84,5 +113,17 @@
   .ctaBtn {
     padding: 10px 20px;
     font-size: 14px;
+  }
+
+  .about {
+    padding: 1rem 1rem;
+  }
+
+  .rice_heading {
+    font-size: 40px;
+  }
+
+  .rice_highlight {
+    font-size: 20px;
   }
 }
