@@ -40,6 +40,21 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 5px 25px 0px;
 }
 
+.toggler {
+  background: none;
+  border: none;
+  color: #2e3d58;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  display: none;
+}
+
+.toggler:focus {
+  outline: none;
+}
+
 @media (max-width: 991px) {
   .navbar {
     height: auto;
@@ -50,7 +65,16 @@
   }
 
   .contactBtn {
+    font-size: 14px;
     margin-top: 10px;
     padding-bottom: 8px;
+  }
+
+  .toggler {
+    display: block;
+  }
+
+  .link {
+    font-size: 14px;
   }
 }
