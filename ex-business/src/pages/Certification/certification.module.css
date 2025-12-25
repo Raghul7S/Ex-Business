@@ -9,13 +9,6 @@
   padding: 3rem 10rem;
 }
 
-.certification_heading {
-  font-size: 30px;
-  font-weight: 700;
-  color: var(--text-green);
-  padding-bottom: 16px;
-}
-
 .certificatesWrapper {
   display: flex;
   gap: 20px;
@@ -56,11 +49,6 @@
   width: 200px;
   height: 200px;
   margin-bottom: 8px;
-}
-
-.certificateCard p {
-  font-size: 14px;
-  font-weight: 500;
 }
 
 @media (max-width: 768px) {

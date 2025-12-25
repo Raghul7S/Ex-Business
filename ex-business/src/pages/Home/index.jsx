@@ -1,3 +1,5 @@
+import Text from "../../components/Text";
+
 import styles from "./Home.module.css";
 
 export default function Home() {
@@ -7,18 +9,23 @@ export default function Home() {
         <div className={styles.overlay}>
           <div className="container">
             <div className={styles.content}>
-              <span className={styles.smallText}>Premium Quality Export</span>
+              <Text fs16 textGlow weight uppercase>
+                Premium Quality Export
+              </Text>
 
-              <h1 className={styles.title}>
+              <Text fs60 textWhite weight>
                 Bringing the World's Finest{" "}
-                <span style={{ color: "#d4af37" }}>Rice</span> to Your Table
-              </h1>
+                <Text textGlow fs60>
+                  Rice
+                </Text>{" "}
+                to Your Table
+              </Text>
 
-              <p className={styles.description}>
+              <Text fs20 textWhite weight={false}>
                 We specialize in exporting premium Basmati and Non-Basmati rice
                 varieties globally. Sourced directly from the finest farms,
                 ensuring purity, aroma, and taste in every grain.
-              </p>
+              </Text>
 
               <button className={styles.ctaBtn}>Explore Products</button>
             </div>
@@ -26,15 +33,19 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.about}>
-        <span className={styles.rice_highlight}>Premium Quality Export</span>
-        <h1 className={styles.rice_heading}>Basmati Rice</h1>
-        <span className={styles.rice_description}>
+        <Text fs30 weight textGreen>
+          Premium Quality Export
+        </Text>
+        <Text fs56 weight margin>
+          Basmati Rice
+        </Text>
+        <Text fs16 weight={false} fontMont>
           Vinland Exports provides the finest quality Basmati Rice, known for
           its extra-long grains, rich aroma, and premium quality. Our Basmati
           Rice is perfect for international markets and bulk purchases.
-        </span>
+        </Text>
         <br />
-        <span className={styles.rice_description}>
+        <Text fs16 weight={false} fontMont>
           We Supply Basmati Rice to our Clients. Basmati, Meaning "Queen of
           Fragrance" is a Variety of Long Grain Rice. Basmati Rice is famous for
           its Fragrance and Good Aroma. Basmati is a variety of long grain rice,
@@ -45,7 +56,7 @@ export default function Home() {
           it's quality and aroma. We at Graceferro exports Premium Quality
           Products that match International Standards. The Quality and Packing
           is done as per Customer Specification.
-        </span>
+        </Text>
       </div>
     </section>
   );

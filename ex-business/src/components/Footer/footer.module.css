@@ -10,11 +10,13 @@
   gap: 40px;
   max-width: 1300px;
   margin: 0 auto;
+  align-items: end;
 }
 
 .logo {
-  height: 180px;
+  height: 130px;
   width: auto;
+  padding: 0;
 }
 
 .text {

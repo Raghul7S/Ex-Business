@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  height: 100px;
+  height: 80px;
   background-color: var(--white-bg);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   z-index: 1000;
@@ -10,13 +10,12 @@
 }
 
 .logo {
-  height: 180px;
+  height: 130px;
   width: auto;
 }
 
 .link {
   color: var(--text-black);
-  font-weight: 500;
   font-size: 16px;
 }
 
