@@ -1,3 +1,4 @@
+import logo from "../../assets/images/vinland_logo.png";
 import styles from "./footer.module.css";
 
 export default function Footer() {
@@ -6,7 +7,7 @@ export default function Footer() {
       <div className={styles.top}>
         {/* Brand */}
         <div className={styles.col}>
-          <h3 className={styles.brand}>🌾 Golden Harvest</h3>
+          <img src={logo} alt="ExportCo Logo" className={styles.logo} />
           <p className={styles.text}>
             Delivering premium quality rice from the heart of India to the world
             since 1995.

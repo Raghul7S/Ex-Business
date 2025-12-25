@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
-import logo from "../../../public/assets/images/vinland_logo.png";
+import logo from "../../assets/images/vinland_logo.png";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
@@ -48,8 +48,10 @@ export default function Navbar() {
               </a>
             </li>
 
-            <li className={`nav-item ${styles.contactBtn}`}>
-              <a href="#contact">Contact Us</a>
+            <li className={"nav-item"}>
+              <a className={`nav-link ${styles.link}`} href="#contact">
+                Contact Us
+              </a>
             </li>
           </ul>
         </div>

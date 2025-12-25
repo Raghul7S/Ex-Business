@@ -4,28 +4,23 @@ import styles from "./certification.module.css";
 const certificates = [
   {
     name: "FSSAI",
-    department: "abcd",
-    image: "https://raghul7s.github.io/PortfolioApp/assets/Me.jpg",
-  },
-  {
-    name: "GST",
-    department: "abcd",
-    image: "https://raghul7s.github.io/PortfolioApp/assets/Me.jpg",
-  },
-  {
-    name: "IEC",
-    department: "abcd",
-    image: "https://raghul7s.github.io/PortfolioApp/assets/Me.jpg",
+    image: "../../assets/images/fssai.png",
   },
   {
     name: "APEDA",
-    department: "abcd",
-    image: "https://raghul7s.github.io/PortfolioApp/assets/Me.jpg",
+    image: "../../assets/images/APEDA.png",
+  },
+  {
+    name: "IEC",
+    image: "../../assets/images/iec.png",
+  },
+  {
+    name: "GST",
+    image: "../../assets/images/fssai.png",
   },
   {
     name: "ISO",
-    department: "abcd",
-    image: "https://raghul7s.github.io/PortfolioApp/assets/Me.jpg",
+    image: "../../assets/images/fssai.png",
   },
 ];
 
@@ -46,7 +41,6 @@ export default function Certification() {
         {certificates.map((cert, index) => (
           <div key={index} className={styles.certificateCard}>
             <img src={cert.image} alt={cert.name} />
-            <p>{cert.department}</p>
             <p>{cert.name}</p>
           </div>
         ))}
