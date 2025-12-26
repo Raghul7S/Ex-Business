@@ -1,10 +1,13 @@
 import React from "react";
-import styles from "./certification.module.css";
 
 import fssai from "../../assets/images/fssai.png";
 import apeda from "../../assets/images/APEDA.png";
 import iec from "../../assets/images/iec.png";
+import iso from "../../assets/images/iso.png";
+import gst from "../../assets/images/gst.png";
+
 import Text from "../../components/Text";
+import styles from "./certification.module.css";
 
 const certificates = [
   {
@@ -21,11 +24,11 @@ const certificates = [
   },
   {
     name: "GST",
-    image: fssai,
+    image: gst,
   },
   {
     name: "ISO",
-    image: fssai,
+    image: iso,
   },
 ];
 
@@ -33,10 +36,10 @@ export default function Certification() {
   return (
     <section id="certificates">
       <div className={styles.certification}>
-        <Text fs30 weight textGreen margin>
+        <Text as="h3" fs30 weight textGreen margin>
           Our Certifications
         </Text>
-        <Text fs16 weight={false} fontMont>
+        <Text as="p" fs16 weight={false} fontMont>
           We follow globally recognized quality and safety benchmarks, with our
           dedication to excellence validated by internationally respected
           certifying bodies.
@@ -47,7 +50,7 @@ export default function Certification() {
         {certificates.map((cert, index) => (
           <div key={index} className={styles.certificateCard}>
             <img src={cert.image} alt={cert.name} />
-            <Text fs14 weight={false}>
+            <Text as="h4" fs14 weight={false}>
               {cert.name}
             </Text>
           </div>

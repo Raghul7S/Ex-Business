@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 
 import logo from "../../assets/images/vinland_logo.png";
@@ -10,9 +11,13 @@ export default function Navbar() {
   return (
     <nav className={`navbar navbar-expand-lg ${styles.navbar}`}>
       <div className="container">
-        <a className={styles.brand} href="/">
-          <img src={logo} alt="ExportCo Logo" className={styles.logo} />
-        </a>
+        <Link to="/" className={styles.brand}>
+          <img
+            src={logo}
+            alt="Vinland Export Company Logo"
+            className={styles.logo}
+          />
+        </Link>
 
         <button
           className={styles.toggler}
@@ -25,33 +30,37 @@ export default function Navbar() {
         <div className={`collapse navbar-collapse ${open ? "show" : ""}`}>
           <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-3">
             <li className="nav-item">
-              <a className={`nav-link ${styles.link}`} href="#home">
+              <Link
+                to="/"
+                className={`nav-link ${styles.link}`}
+                onClick={() => setOpen(false)}
+              >
                 Home
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a className={`nav-link ${styles.link}`} href="#products">
+              <Link to="/products" className={`nav-link ${styles.link}`}>
                 Products
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a className={`nav-link ${styles.link}`} href="#service">
+              <Link to="/services" className={`nav-link ${styles.link}`}>
                 Service
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a className={`nav-link ${styles.link}`} href="#certificates">
+              <Link to="/certifications" className={`nav-link ${styles.link}`}>
                 Certificates
-              </a>
+              </Link>
             </li>
 
-            <li className={"nav-item"}>
-              <a className={`nav-link ${styles.link}`} href="#contact">
+            <li className="nav-item">
+              <Link to="/contact" className={`nav-link ${styles.link}`}>
                 Contact Us
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

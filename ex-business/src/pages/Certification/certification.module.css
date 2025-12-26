@@ -7,6 +7,7 @@
   letter-spacing: 1.5px;
   align-items: center;
   padding: 3rem 10rem;
+  margin-top: 5rem;
 }
 
 .certificatesWrapper {
@@ -15,8 +16,9 @@
   overflow-x: auto;
   scroll-behavior: smooth;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 0 1rem;
+  padding-bottom: 5rem;
 }
 
 .certificatesWrapper::-webkit-scrollbar {
@@ -54,5 +56,10 @@
 @media (max-width: 768px) {
   .certification {
     padding: 1rem;
+  }
+
+  .certificateCard img {
+    width: 150px;
+    height: 150px;
   }
 }

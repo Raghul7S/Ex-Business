@@ -1,17 +1,24 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
 import Footer from "./components/Footer";
+
+import Home from "./pages/Home";
 import Certification from "./pages/Certification";
 
-export default function () {
+export default function App() {
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      <div>
-        <Home />
-        <Certification />
-      </div>
+
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/certifications" element={<Certification />} />
+        </Routes>
+      </main>
+
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }

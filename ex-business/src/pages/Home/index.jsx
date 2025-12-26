@@ -9,11 +9,11 @@ export default function Home() {
         <div className={styles.overlay}>
           <div className="container">
             <div className={styles.content}>
-              <Text fs16 textGlow weight uppercase>
+              <Text as="h3" fs16 textGlow weight uppercase>
                 Premium Quality Export
               </Text>
 
-              <Text fs60 textWhite weight>
+              <Text as="h1" fs60 textWhite weight>
                 Bringing the World's Finest{" "}
                 <Text textGlow fs60>
                   Rice
@@ -21,7 +21,7 @@ export default function Home() {
                 to Your Table
               </Text>
 
-              <Text fs20 textWhite weight={false}>
+              <Text as="p" fs20 textWhite weight={false}>
                 We specialize in exporting premium Basmati and Non-Basmati rice
                 varieties globally. Sourced directly from the finest farms,
                 ensuring purity, aroma, and taste in every grain.
@@ -33,19 +33,19 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.about}>
-        <Text fs30 weight textGreen>
+        <Text as="h3" fs30 weight textGreen margin>
           Premium Quality Export
         </Text>
-        <Text fs56 weight margin>
+        <Text as="h1" fs56 weight margin>
           Basmati Rice
         </Text>
-        <Text fs16 weight={false} fontMont>
+        <Text as="p" fs16 weight={false} fontMont>
           Vinland Exports provides the finest quality Basmati Rice, known for
           its extra-long grains, rich aroma, and premium quality. Our Basmati
           Rice is perfect for international markets and bulk purchases.
         </Text>
         <br />
-        <Text fs16 weight={false} fontMont>
+        <Text as="p" fs16 weight={false} fontMont>
           We Supply Basmati Rice to our Clients. Basmati, Meaning "Queen of
           Fragrance" is a Variety of Long Grain Rice. Basmati Rice is famous for
           its Fragrance and Good Aroma. Basmati is a variety of long grain rice,

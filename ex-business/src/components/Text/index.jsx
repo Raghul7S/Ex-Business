@@ -2,6 +2,7 @@ import React from "react";
 
 export default function Text({
   children,
+  as = "span",
 
   /* Font Sizes */
   fs12,
@@ -29,6 +30,8 @@ export default function Text({
   margin = false,
   style = {},
 }) {
+  const Component = as;
+
   const getColor = () => {
     if (textGreen) return "var(--text-green)";
     if (textWhite) return "var(--text-white)";
@@ -55,7 +58,7 @@ export default function Text({
   };
 
   return (
-    <span
+    <Component
       style={{
         fontSize: getFontSize(),
         fontFamily: fontFamily(),
@@ -67,6 +70,6 @@ export default function Text({
       }}
     >
       {children}
-    </span>
+    </Component>
   );
 }
