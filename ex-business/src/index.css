@@ -64,3 +64,13 @@ h6 {
   margin: 0;
   padding: 0;
 }
+
+main {
+  padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 120px;
+  }
+}

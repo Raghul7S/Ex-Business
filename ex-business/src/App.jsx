@@ -2,9 +2,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
 import Home from "./pages/Home";
 import Certification from "./pages/Certification";
+
+import "./index.css";
 
 export default function App() {
   return (

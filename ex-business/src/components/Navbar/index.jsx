@@ -40,25 +40,41 @@ export default function Navbar() {
             </li>
 
             <li className="nav-item">
-              <Link to="/products" className={`nav-link ${styles.link}`}>
+              <Link
+                to="/products"
+                onClick={() => setOpen(false)}
+                className={`nav-link ${styles.link}`}
+              >
                 Products
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link to="/services" className={`nav-link ${styles.link}`}>
+              <Link
+                to="/services"
+                onClick={() => setOpen(false)}
+                className={`nav-link ${styles.link}`}
+              >
                 Service
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link to="/certifications" className={`nav-link ${styles.link}`}>
+              <Link
+                to="/certifications"
+                onClick={() => setOpen(false)}
+                className={`nav-link ${styles.link}`}
+              >
                 Certificates
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link to="/contact" className={`nav-link ${styles.link}`}>
+              <Link
+                to="/contact"
+                onClick={() => setOpen(false)}
+                className={`nav-link ${styles.link}`}
+              >
                 Contact Us
               </Link>
             </li>

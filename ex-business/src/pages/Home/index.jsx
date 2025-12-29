@@ -1,4 +1,5 @@
 import Text from "../../components/Text";
+import Certification from "../Certification";
 
 import styles from "./Home.module.css";
 
@@ -58,6 +59,7 @@ export default function Home() {
           is done as per Customer Specification.
         </Text>
       </div>
+      <Certification />
     </section>
   );
 }
