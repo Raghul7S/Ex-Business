@@ -51,6 +51,28 @@
   color: var(--text-black);
 }
 
+.titleRow {
+  display: flex;
+  align-items: center;
+  /* gap: 2rem; */
+}
+
+.arrow {
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  color: var(--text-white);
+  font-size: 20px;
+  background-color: var(--text-green);
+  border-radius: 50%;
+}
+
+/* Hover effect */
+.card:hover .arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .imageWrapper {

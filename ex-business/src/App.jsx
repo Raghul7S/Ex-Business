@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -7,10 +7,12 @@ import Certification from "./pages/Certification";
 
 import "./index.css";
 import Products from "./components/Products";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
+      <ScrollToTop />
       <Navbar />
 
       <main>
@@ -22,6 +24,6 @@ export default function App() {
       </main>
 
       <Footer />
-    </BrowserRouter>
+    </Router>
   );
 }

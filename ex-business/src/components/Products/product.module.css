@@ -47,6 +47,28 @@
   display: none;
 }
 
+.loadMoreWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.loadMoreBtn {
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background-color: var(--text-green);
+  color: var(--text-white);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.loadMoreBtn:hover {
+  background-color: transparent;
+  color: var(--text-green);
+}
+
 @media (max-width: 1024px) {
   .tabs_wrapper {
     flex-direction: row;

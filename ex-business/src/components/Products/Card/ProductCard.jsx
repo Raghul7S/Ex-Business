@@ -1,4 +1,6 @@
 import React from "react";
+import { FiArrowRight } from "react-icons/fi";
+
 import styles from "./productCard.module.css";
 import Text from "../../Text";
 
@@ -10,9 +12,13 @@ export default function ProductCard({ title, image }) {
       </div>
 
       <div className={styles.content}>
-        <Text as="p" fs14 fontMont className={styles.title}>
-          {title}
-        </Text>
+        <div className={styles.titleRow}>
+          <Text as="p" fs14 fontMont className={styles.title}>
+            {title}
+          </Text>
+
+          <FiArrowRight className={styles.arrow} />
+        </div>
       </div>
     </div>
   );

@@ -1,19 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-import { products } from "../../utils/data";
-import styles from "./product.module.css";
 import ProductCard from "./Card/ProductCard";
 import Text from "../Text";
+import { products } from "../../utils/data";
+import styles from "./product.module.css";
 
 export default function Products({ marginTop = false }) {
+  const ITEMS_PER_LOAD = 12;
   const categories = ["all", ...Object.keys(products)];
-
+  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_LOAD);
   const [activeCategory, setActiveCategory] = useState("all");
+
+  useEffect(() => {
+    setVisibleCount(ITEMS_PER_LOAD);
+  }, [activeCategory]);
 
   const filteredProducts =
     activeCategory === "all"
       ? Object.values(products).flatMap((cat) => cat.items)
       : products[activeCategory].items;
+
+  const visibleProducts = filteredProducts.slice(0, visibleCount);
 
   return (
     <div id="products">
@@ -74,7 +81,7 @@ export default function Products({ marginTop = false }) {
       </div>
 
       <section className={styles.grid}>
-        {filteredProducts.map((product) => (
+        {visibleProducts.map((product) => (
           <ProductCard
             key={product.id}
             title={product.title}
@@ -82,6 +89,17 @@ export default function Products({ marginTop = false }) {
           />
         ))}
       </section>
+      {filteredProducts.length > ITEMS_PER_LOAD &&
+        visibleCount < filteredProducts.length && (
+          <div className={styles.loadMoreWrapper}>
+            <button
+              className={styles.loadMoreBtn}
+              onClick={() => setVisibleCount((prev) => prev + ITEMS_PER_LOAD)}
+            >
+              Load More
+            </button>
+          </div>
+        )}
     </div>
   );
 }
