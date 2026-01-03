@@ -16,6 +16,10 @@
   --text-grey: #6c757d;
   --text-glow: #d4af37;
 
+  --Overlay: rgba(0, 0, 0, 0.9);
+  --border: var(--button-bg);
+  --CardShadow: rgba(103, 81, 185, 0.4);
+
   --fs-12: clamp(10px, 1.5vw, 12px);
   --fs-14: clamp(12px, 1.8vw, 14px);
   --fs-16: clamp(14px, 2vw, 16px);

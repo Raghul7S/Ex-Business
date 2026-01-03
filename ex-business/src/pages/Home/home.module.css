@@ -45,13 +45,12 @@
   font-size: 18px;
   text-align: center;
   color: var(--text-green);
-  letter-spacing: 1.5px;
   align-items: center;
   padding: 3rem 10rem;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .content {
     padding-left: 1.25rem;
     max-width: 100%;

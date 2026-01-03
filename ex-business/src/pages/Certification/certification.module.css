@@ -52,6 +52,12 @@
   margin-bottom: 8px;
 }
 
+@media (max-width: 1024px) {
+  .certification {
+    padding: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .certification {
     padding: 1rem;

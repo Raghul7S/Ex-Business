@@ -1,5 +1,5 @@
+import Products from "../../components/Products";
 import Text from "../../components/Text";
-import Certification from "../Certification";
 
 import styles from "./Home.module.css";
 
@@ -22,7 +22,7 @@ export default function Home() {
                 to Your Table
               </Text>
 
-              <Text as="p" fs20 textWhite weight={false}>
+              <Text as="p" fs20 textWhite weight={false} letterSpacing>
                 We specialize in exporting premium Basmati and Non-Basmati rice
                 varieties globally. Sourced directly from the finest farms,
                 ensuring purity, aroma, and taste in every grain.
@@ -38,15 +38,15 @@ export default function Home() {
           Premium Quality Export
         </Text>
         <Text as="h1" fs56 weight margin>
-          Basmati Rice
+          Basmati Rice & Non Basmati Rice
         </Text>
-        <Text as="p" fs16 weight={false} fontMont>
+        <Text as="p" fs16 weight={false} fontMont letterSpacing>
           Vinland Exports provides the finest quality Basmati Rice, known for
           its extra-long grains, rich aroma, and premium quality. Our Basmati
           Rice is perfect for international markets and bulk purchases.
         </Text>
         <br />
-        <Text as="p" fs16 weight={false} fontMont>
+        <Text as="p" fs16 weight={false} fontMont letterSpacing>
           We Supply Basmati Rice to our Clients. Basmati, Meaning "Queen of
           Fragrance" is a Variety of Long Grain Rice. Basmati Rice is famous for
           its Fragrance and Good Aroma. Basmati is a variety of long grain rice,
@@ -59,7 +59,7 @@ export default function Home() {
           is done as per Customer Specification.
         </Text>
       </div>
-      <Certification />
+      <Products />
     </section>
   );
 }

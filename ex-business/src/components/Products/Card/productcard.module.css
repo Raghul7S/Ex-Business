@@ -1,0 +1,68 @@
+.card {
+  background: var(--FormBg);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px var(--CardShadow);
+}
+
+/* IMAGE */
+.imageWrapper {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.image {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+/* CONTENT */
+.content {
+  text-align: center;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-black);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .imageWrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  .title {
+    font-size: 0.95rem;
+  }
+
+  .card {
+    max-width: 200px;
+  }
+}

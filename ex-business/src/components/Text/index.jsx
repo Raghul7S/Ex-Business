@@ -14,7 +14,6 @@ export default function Text({
   fs56,
 
   /* Colors */
-  textBlack,
   textGreen,
   textWhite,
   textGrey,
@@ -25,6 +24,7 @@ export default function Text({
   fontPlay,
 
   /* Styles */
+  letterSpacing = false,
   weight = true,
   uppercase = false,
   margin = false,
@@ -66,6 +66,7 @@ export default function Text({
         fontWeight: weight ? 600 : null,
         marginBottom: margin ? "16px" : null,
         textTransform: uppercase ? "uppercase" : "none",
+        letterSpacing: letterSpacing ? "1.5px" : "normal",
         ...style,
       }}
     >

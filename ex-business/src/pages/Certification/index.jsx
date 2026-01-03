@@ -39,7 +39,7 @@ export default function Certification() {
         <Text as="h3" fs30 weight textGreen margin>
           Our Certifications
         </Text>
-        <Text as="p" fs16 weight={false} fontMont>
+        <Text as="p" fs16 weight={false} fontMont letterSpacing>
           We follow globally recognized quality and safety benchmarks, with our
           dedication to excellence validated by internationally respected
           certifying bodies.
