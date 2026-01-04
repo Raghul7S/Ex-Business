@@ -10,10 +10,21 @@ export default function Products({ marginTop = false }) {
   const categories = ["all", ...Object.keys(products)];
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_LOAD);
   const [activeCategory, setActiveCategory] = useState("all");
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     setVisibleCount(ITEMS_PER_LOAD);
   }, [activeCategory]);
+
+  const handleCategoryChange = (category) => {
+    if (category === activeCategory) return;
+
+    setIsAnimating(true);
+    setTimeout(() => {
+      setActiveCategory(category);
+      setIsAnimating(false);
+    }, 300);
+  };
 
   const filteredProducts =
     activeCategory === "all"
@@ -55,7 +66,7 @@ export default function Products({ marginTop = false }) {
               className={`${styles.tab} ${
                 activeCategory === category ? styles.active : ""
               }`}
-              onClick={() => setActiveCategory(category)}
+              onClick={() => handleCategoryChange(category)}
             >
               {category === "all"
                 ? "ALL"
@@ -68,7 +79,7 @@ export default function Products({ marginTop = false }) {
         <select
           className={styles.tabsDropdown}
           value={activeCategory}
-          onChange={(e) => setActiveCategory(e.target.value)}
+          onChange={(e) => handleCategoryChange(e.target.value)}
         >
           {categories.map((category) => (
             <option key={category} value={category}>
@@ -80,13 +91,15 @@ export default function Products({ marginTop = false }) {
         </select>
       </div>
 
-      <section className={styles.grid}>
+      <section
+        className={`${styles.grid} ${
+          isAnimating ? styles.fadeOut : styles.fadeIn
+        }`}
+      >
         {visibleProducts.map((product) => (
-          <ProductCard
-            key={product.id}
-            title={product.title}
-            image={product.image}
-          />
+          <div key={product.id} className={styles.cardWrapper}>
+            <ProductCard title={product.title} image={product.image} />
+          </div>
         ))}
       </section>
       {filteredProducts.length > ITEMS_PER_LOAD &&

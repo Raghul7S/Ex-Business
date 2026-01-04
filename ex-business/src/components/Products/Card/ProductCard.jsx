@@ -1,23 +1,38 @@
-import React from "react";
-import { FiArrowRight } from "react-icons/fi";
+import React, { useState } from "react";
 
-import styles from "./productCard.module.css";
 import Text from "../../Text";
+import styles from "./productCard.module.css";
 
 export default function ProductCard({ title, image }) {
-  return (
-    <div className={styles.card}>
-      <div className={styles.imageWrapper}>
-        <img src={image} alt={title} className={styles.image} />
-      </div>
+  const [isFlipped, setIsFlipped] = useState(false);
 
-      <div className={styles.content}>
-        <div className={styles.titleRow}>
-          <Text as="p" fs14 fontMont className={styles.title}>
+  return (
+    <div
+      className={styles.cardContainer}
+      onMouseEnter={() => setIsFlipped(true)}
+      onMouseLeave={() => setIsFlipped(false)}
+    >
+      <div className={`${styles.cardInner} ${isFlipped ? styles.flipped : ""}`}>
+        {/* FRONT SIDE */}
+        <div className={`${styles.card} ${styles.cardFront}`}>
+          <div className={styles.imageWrapper}>
+            <img src={image} alt={title} className={styles.image} />
+          </div>
+          <Text as="p" f14 fontMont className={styles.title}>
             {title}
           </Text>
+        </div>
 
-          <FiArrowRight className={styles.arrow} />
+        {/* BACK SIDE */}
+        <div className={`${styles.card} ${styles.cardBack}`}>
+          <div className={styles.content}>
+            <Text as="p" f14 fontMont className={styles.title}>
+              Name: {title}
+            </Text>
+            <button className={styles.details_btn}>
+              <Text f14>More details</Text>
+            </button>
+          </div>
         </div>
       </div>
     </div>

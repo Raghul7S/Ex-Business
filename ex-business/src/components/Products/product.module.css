@@ -3,6 +3,16 @@
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
   padding: 1rem 10rem;
+  transition: opacity 0.25s ease;
+}
+
+/* Simple fade animations */
+.fadeOut {
+  opacity: 0;
+}
+
+.fadeIn {
+  opacity: 1;
 }
 
 .products_header {
@@ -34,6 +44,12 @@
   border: 1px solid var(--border);
   cursor: pointer;
   transition: all 0.2s ease;
+}
+
+.tab:hover {
+  background-color: var(--text-green);
+  color: var(--text-white);
+  opacity: 0.9;
 }
 
 .active {

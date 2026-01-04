@@ -1,3 +1,24 @@
+/* CARD CONTAINER */
+.cardContainer {
+  width: 100%;
+  max-width: 260px;
+  height: 300px;
+  perspective: 1000px;
+  margin: 0 auto;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.cardInner.flipped {
+  transform: rotateY(180deg);
+}
+
 .card {
   background: var(--FormBg);
   border: 1px solid var(--border);
@@ -7,18 +28,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  justify-content: center;
 
   width: 100%;
-  max-width: 260px;
-  margin: 0 auto;
+  height: 100%;
 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: absolute;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-.card:hover {
-  cursor: pointer;
-  transform: translateY(-4px);
+.cardFront {
+  gap: 30px;
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+  background: var(--light-bg);
+}
+
+.cardContainer:hover .card {
   box-shadow: 0 10px 24px var(--CardShadow);
 }
 
@@ -42,39 +71,43 @@
 
 /* CONTENT */
 .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+}
+
+.details_btn {
+  background-color: var(--text-green);
+  color: var(--text-white);
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.details_btn:hover {
+  background-color: var(--white-bg);
+  color: var(--text-green);
 }
 
 .title {
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-black);
-}
-
-.titleRow {
-  display: flex;
-  align-items: center;
-  /* gap: 2rem; */
-}
-
-.arrow {
-  opacity: 0;
-  transform: translateX(-6px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  color: var(--text-white);
-  font-size: 20px;
-  background-color: var(--text-green);
-  border-radius: 50%;
-}
-
-/* Hover effect */
-.card:hover .arrow {
-  opacity: 1;
-  transform: translateX(0);
+  text-align: center;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+  .cardContainer {
+    max-width: 200px;
+    height: 230px;
+  }
+
   .imageWrapper {
     width: 120px;
     height: 120px;
@@ -82,9 +115,5 @@
 
   .title {
     font-size: 0.95rem;
-  }
-
-  .card {
-    max-width: 200px;
   }
 }
