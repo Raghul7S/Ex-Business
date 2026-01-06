@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
-  padding: 1rem 10rem;
+  padding: 1rem 10rem 3rem 10rem;
   transition: opacity 0.25s ease;
 }
 
@@ -33,6 +33,47 @@
 .tabs {
   display: flex;
   gap: 8px;
+}
+
+.tooltipWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip box */
+.tooltip {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background-color: var(--text-black);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 11px;
+  border-radius: 4px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Tooltip arrow */
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--text-black) transparent transparent transparent;
+}
+
+/* Show on hover */
+.tooltipWrapper:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 .tab {
@@ -66,7 +107,7 @@
 .loadMoreWrapper {
   display: flex;
   justify-content: center;
-  margin: 1rem 0;
+  margin-bottom: 2rem;
 }
 
 .loadMoreBtn {

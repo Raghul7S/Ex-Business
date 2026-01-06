@@ -4,6 +4,7 @@ import ProductCard from "./Card/ProductCard";
 import Text from "../Text";
 import { products } from "../../utils/data";
 import styles from "./product.module.css";
+import Modal from "../Modal";
 
 export default function Products({ marginTop = false }) {
   const ITEMS_PER_LOAD = 12;
@@ -11,6 +12,7 @@ export default function Products({ marginTop = false }) {
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_LOAD);
   const [activeCategory, setActiveCategory] = useState("all");
   const [isAnimating, setIsAnimating] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
     setVisibleCount(ITEMS_PER_LOAD);
@@ -26,12 +28,26 @@ export default function Products({ marginTop = false }) {
     }, 300);
   };
 
+  const categoryCounts = {
+    all: Object.values(products).reduce(
+      (sum, cat) => sum + cat.items.length,
+      0
+    ),
+    ...Object.fromEntries(
+      Object.entries(products).map(([key, value]) => [key, value.items.length])
+    ),
+  };
+
   const filteredProducts =
     activeCategory === "all"
       ? Object.values(products).flatMap((cat) => cat.items)
       : products[activeCategory].items;
 
   const visibleProducts = filteredProducts.slice(0, visibleCount);
+
+  const ToggleModal = ({ product }) => {
+    if (!open || !product) return null;
+  };
 
   return (
     <div id="products">
@@ -61,17 +77,22 @@ export default function Products({ marginTop = false }) {
 
         <div className={styles.tabs}>
           {categories.map((category) => (
-            <button
-              key={category}
-              className={`${styles.tab} ${
-                activeCategory === category ? styles.active : ""
-              }`}
-              onClick={() => handleCategoryChange(category)}
-            >
-              {category === "all"
-                ? "ALL"
-                : products[category].label.toUpperCase()}
-            </button>
+            <div className={styles.tooltipWrapper} key={category}>
+              <button
+                className={`${styles.tab} ${
+                  activeCategory === category ? styles.active : ""
+                }`}
+                onClick={() => handleCategoryChange(category)}
+              >
+                {category === "all"
+                  ? "ALL"
+                  : products[category].label.toUpperCase()}
+              </button>
+
+              <span className={styles.tooltip}>
+                {categoryCounts[category]} items
+              </span>
+            </div>
           ))}
         </div>
 
@@ -98,7 +119,12 @@ export default function Products({ marginTop = false }) {
       >
         {visibleProducts.map((product) => (
           <div key={product.id} className={styles.cardWrapper}>
-            <ProductCard title={product.title} image={product.image} />
+            <ProductCard
+              title={product.title}
+              image={product.image}
+              product={product}
+              onMore={setSelectedProduct}
+            />
           </div>
         ))}
       </section>
@@ -113,6 +139,11 @@ export default function Products({ marginTop = false }) {
             </button>
           </div>
         )}
+      <Modal
+        open={ToggleModal}
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
     </div>
   );
 }

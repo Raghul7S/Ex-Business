@@ -1,0 +1,51 @@
+/* modal.module.css */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 8px;
+}
+
+.title {
+  margin-bottom: 1rem;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  align-items: center;
+}
+
+.table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.table td:first-child {
+  font-weight: 500;
+  color: #555;
+}
+
+.closeBtn {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: var(--text-green);
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}

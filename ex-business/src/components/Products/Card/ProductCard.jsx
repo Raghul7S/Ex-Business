@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import Text from "../../Text";
 import styles from "./productCard.module.css";
 
-export default function ProductCard({ title, image }) {
+export default function ProductCard({ title, image, product, onMore }) {
   const [isFlipped, setIsFlipped] = useState(false);
+
+  console.log(product);
 
   return (
     <div
@@ -18,7 +20,7 @@ export default function ProductCard({ title, image }) {
           <div className={styles.imageWrapper}>
             <img src={image} alt={title} className={styles.image} />
           </div>
-          <Text as="p" f14 fontMont className={styles.title}>
+          <Text as="p" fs14 fontMont className={styles.title}>
             {title}
           </Text>
         </div>
@@ -26,11 +28,14 @@ export default function ProductCard({ title, image }) {
         {/* BACK SIDE */}
         <div className={`${styles.card} ${styles.cardBack}`}>
           <div className={styles.content}>
-            <Text as="p" f14 fontMont className={styles.title}>
+            <Text as="p" fs14 fontMont className={styles.title}>
               Name: {title}
             </Text>
-            <button className={styles.details_btn}>
-              <Text f14>More details</Text>
+            <button
+              className={styles.details_btn}
+              onClick={() => onMore(product)}
+            >
+              More details
             </button>
           </div>
         </div>
