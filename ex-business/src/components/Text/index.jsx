@@ -12,6 +12,7 @@ export default function Text({
   fs20,
   fs30,
   fs56,
+  fs18,
 
   /* Colors */
   textGreen,
@@ -28,6 +29,7 @@ export default function Text({
   weight = true,
   uppercase = false,
   margin = false,
+  center = false,
   style = {},
 }) {
   const Component = as;
@@ -54,6 +56,7 @@ export default function Text({
     if (fs20) return "var(--fs-20)";
     if (fs30) return "var(--fs-30)";
     if (fs56) return "var(--fs-56)";
+    if (fs18) return "var(--fs-18)";
     return "var(--fs-14)"; // default
   };
 
@@ -67,6 +70,7 @@ export default function Text({
         marginBottom: margin ? "16px" : null,
         textTransform: uppercase ? "uppercase" : "none",
         letterSpacing: letterSpacing ? "1.5px" : "normal",
+        textAlign: center ? "center" : null,
         ...style,
       }}
     >

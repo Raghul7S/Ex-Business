@@ -12,15 +12,9 @@
 .modal {
   background: #fff;
   padding: 1.5rem;
-  width: 90%;
+  width: 100%;
   max-width: 500px;
   border-radius: 8px;
-}
-
-.title {
-  margin-bottom: 1rem;
-  font-size: 18px;
-  font-weight: 600;
 }
 
 .table {
@@ -30,13 +24,8 @@
 }
 
 .table td {
-  padding: 8px;
+  padding: 18px;
   border-bottom: 1px solid #ddd;
-}
-
-.table td:first-child {
-  font-weight: 500;
-  color: #555;
 }
 
 .closeBtn {

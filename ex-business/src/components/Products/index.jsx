@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import ProductCard from "./Card/ProductCard";
 import Text from "../Text";
 import { products } from "../../utils/data";
-import styles from "./product.module.css";
 import Modal from "../Modal";
+import styles from "./product.module.css";
 
 export default function Products({ marginTop = false }) {
   const ITEMS_PER_LOAD = 12;
